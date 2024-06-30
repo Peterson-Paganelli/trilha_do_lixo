@@ -1,4 +1,3 @@
-// Exemplo da estrutura básica da página Home
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
