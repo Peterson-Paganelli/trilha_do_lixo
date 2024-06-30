@@ -1,0 +1,10 @@
+Para inicializar o projeto
+
+-Clone o repositório para a máquina local
+-Dentro do repositório raiz rode os comandos: 
+"npm install"
+"npm install -g expo-cli"
+"expo doctor --fix-dependencies"
+
+Para iniciar o projeto rode o comando:
+"npx expo start" ou "npx expo start --android"
