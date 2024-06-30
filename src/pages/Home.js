@@ -1,13 +1,27 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-export default function Home() {
+export default function Home({navigation})  {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Bem-vindo à Página Home!</Text>
+      <Text style={styles.title}>Home</Text>
+
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate('Configuracao')}
+      >
+        <Text style={styles.buttonText}>Configurações</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate('Mapa')}
+      >
+        <Text style={styles.buttonText}>Mapa</Text>
+      </TouchableOpacity>
+
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -19,5 +33,14 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     marginBottom: 20,
+  },
+  button: {
+    padding: 10,
+    backgroundColor: '#DDDDDD',
+    borderRadius: 5,
+    marginTop: 10,
+  },
+  buttonText: {
+    fontSize: 16,
   },
 });
