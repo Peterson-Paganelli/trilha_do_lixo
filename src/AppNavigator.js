@@ -4,6 +4,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Home from './pages/Home';
 import Configuracao from './pages/Configuracao';
 import Mapa from './pages/Mapa';
+import Login from './pages/Login';
+import Perfil from './pages/Perfil';
 
 const Stack = createStackNavigator();
 
@@ -11,6 +13,7 @@ export default function AppNavigator() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+
         <Stack.Screen
           name="Home"
           component={Home}
@@ -20,6 +23,11 @@ export default function AppNavigator() {
           name="Configuracao"
           component={Configuracao}
           options={{ title: 'Configuracao' }}
+        />
+        <Stack.Screen 
+          name='Perfil'
+          component={Perfil}
+          options={{ title: 'Perfil' }}
         />
         <Stack.Screen
           name="Mapa"

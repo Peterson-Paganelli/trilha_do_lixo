@@ -4,21 +4,25 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 export default function Home({navigation})  {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Home</Text>
-
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => navigation.navigate('Configuracao')}
-      >
-        <Text style={styles.buttonText}>Configurações</Text>
-      </TouchableOpacity>
+      <Text>Novidades e durações das trilhas</Text>
       <TouchableOpacity
         style={styles.button}
         onPress={() => navigation.navigate('Mapa')}
       >
         <Text style={styles.buttonText}>Mapa</Text>
       </TouchableOpacity>
-
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate('Perfil')}
+      >
+        <Text style={styles.buttonText}>Perfil</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate('Configuracao')}
+      >
+        <Text style={styles.buttonText}>Configurações</Text>
+      </TouchableOpacity>
     </View>
   );
 }

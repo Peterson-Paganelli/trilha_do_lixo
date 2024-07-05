@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { View, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, Dimensions, TouchableOpacity } from 'react-native'
 import MapView, { Marker } from 'react-native-maps'
 
-export default function Mapa() {
+export default function Mapa({navigation}) {
   const [region, setRegion] = useState({
     latitude: -23.55052,
     longitude: -46.633308,
@@ -12,6 +12,14 @@ export default function Mapa() {
 
   return (
     <View style={styles.container}>
+      <View style={styles.header}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => navigation.navigate('Home')}
+        >
+          <Text style={styles.buttonText}>Home</Text>
+        </TouchableOpacity>
+      </View>
       <MapView
         style={styles.map}
         region={region}
@@ -33,10 +41,22 @@ export default function Mapa() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
   },
+  header: {
+    display: 'flex',
+    flexDirection: 'row',
+  },
+  button: {
+    padding: 10,
+    backgroundColor: '#DDDDDD',
+    borderRadius: 5,
+  },
+  buttonText: {
+    fontSize: 16,
+  },
   map: {
-    position: 'absolute',
+    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height,
   },
 })

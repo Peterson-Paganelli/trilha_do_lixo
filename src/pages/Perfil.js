@@ -1,10 +1,10 @@
+
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-export default function Configuracao({navigation}) {
+export default function Perfil({navigation}) {
   return (
     <View style={styles.container}>
-
       <View style={styles.header}>
         <TouchableOpacity
           style={styles.button}
@@ -14,15 +14,14 @@ export default function Configuracao({navigation}) {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate('Perfil')}
+          onPress={() => navigation.navigate('Configuracao')}
         >
-          <Text style={styles.buttonText}>Perfil</Text>
+          <Text style={styles.buttonText}>Configurações</Text>
         </TouchableOpacity>
       </View>
-
-      <Text style={styles.title}>Configurações</Text>
-      <Text>Alterar senha</Text>
-      <Text>Sair</Text>
+      <Text style={styles.title}>Perfil</Text>
+      <Text>Recompensas pelos lixos coletados</Text>
+      <Text>Como resgatar</Text>
     </View>
   );
 };
@@ -32,11 +31,14 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fff',
   },
   header: {
     display: 'flex',
     flexDirection: 'row',
+  },
+  title: {
+    fontSize: 24,
+    marginBottom: 20,
   },
   title: {
     fontSize: 24,

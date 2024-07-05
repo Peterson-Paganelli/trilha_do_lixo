@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { } from 'react-native';
+import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 export default function Login() {
@@ -18,30 +19,26 @@ export default function Login() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Página de Login</Text>
-
+      <Text style={styles.title}>Login</Text>
       <TextInput
         style={styles.input}
-        placeholder="Digite seu email"
-        onChangeText={setEmail}
+        placeholder="Email"
         value={email}
+        onChangeText={(text) => setEmail(text)}
       />
-
       <TextInput
         style={styles.input}
-        placeholder="Digite sua senha"
-        onChangeText={setSenha}
+        placeholder="Senha"
         value={senha}
-        secureTextEntry
+        onChangeText={(text) => setSenha(text)}
+        secureTextEntry={true}
       />
-
       <TouchableOpacity style={styles.button} onPress={handleLogin}>
         <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>
     </View>
   );
 };
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
